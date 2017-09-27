@@ -36,14 +36,31 @@ function personMaker() {
     return person;
 }
 
-function keyDleter(obj) {
+function keyDeleter(obj) {
     delete obj.foo;
     delete obj.bar;
     return obj;
 }
 
+//Second Exercise
+
+//1
 
 function makeStudentsReport(data) {
   return data.map(student => `${student.name}: ${student.grade}`);
  }
-  
+
+//2 (First Solution)
+
+function enrollInSummerSchool(students) {
+  for (let i = 0; i < students.length; i++) {
+    for (let key in students[i]) {
+      students[i].status = 'In Summer school';
+    }
+}
+
+return students;
+}
+
+//2 (Second Solution)
+
