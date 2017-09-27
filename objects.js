@@ -1,3 +1,5 @@
+//1
+
 function createMyObject() {
     object = {
         foo: 'bar',
@@ -9,3 +11,28 @@ function createMyObject() {
     }
     return object;
 }
+
+//2
+
+function updateObject(obj) {
+    obj.foo = 'foo';
+    obj.bar = 'bar';
+    obj.bizz = 'bizz';
+    obj.bang = 'bang';
+
+    return obj;
+}
+
+//3
+
+function personMaker() {
+    const person = {
+      firstName: 'Paul',
+      lastName: 'Jones',
+      fullName: function() {
+          return `${this.firstName} ${this.lastName}`;
+      }
+    };
+    return person;
+}
+  
