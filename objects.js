@@ -130,8 +130,31 @@
 //   console.log(`${key} ${obj1[key]}`);
 // }
 
-const foodTime = { 
-  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+// const foodTime = { 
+//   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+// };
+
+// console.log(foodTime.meals[3]);
+
+//4
+
+const luke = {
+  name: 'Luke Skywalker',
+  job_title: 'jedi'
 };
 
-console.log(foodTime.meals[3]);
+const harry = {
+  name: 'Harry Potter',
+  job_title: 'wizard'
+};
+
+const sam = {
+  name: 'Sam McSamface',
+  job_title: 'accountant'
+};
+
+const array = [luke, harry, sam];
+
+for (let i = 0; i < array.length; i++) {
+  console.log(`${array[i].name}: ${array[i].job_title}`);
+}
