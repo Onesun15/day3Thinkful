@@ -203,100 +203,138 @@
 
 
 
-function createCharacter(name, nickname, race, origin, attack, defense) {
-  const factFile =  {
-    name,
-    nickname,
-    race,
-    origin,
-    attack,
-    defense,
-    describe: function() {
-      console.log(`${this.name} is a ${this.race} from ${this.origin}.`);
-    },
-    evaluateFight: function(character) {
-      let x = this.attack-character.defense;
-      let y = character.attack-this.defense;
+// function createCharacter(name, nickname, race, origin, attack, defense) {
+//   const factFile =  {
+//     name,
+//     nickname,
+//     race,
+//     origin,
+//     attack,
+//     defense,
+//     describe: function() {
+//       console.log(`${this.name} is a ${this.race} from ${this.origin}.`);
+//     },
+//     evaluateFight: function(character) {
+//       let x = this.attack-character.defense;
+//       let y = character.attack-this.defense;
 
-      if (x < 0) {
-        x = 0;
-      }
+//       if (x < 0) {
+//         x = 0;
+//       }
 
-      if (y < 0) {
-        y = 0;
-      }
-      console.log(`Your opponent takes ${x} damage and you receive ${y} damage`);
-    }
-  };
-  return factFile;
-}
+//       if (y < 0) {
+//         y = 0;
+//       }
+//       console.log(`Your opponent takes ${x} damage and you receive ${y} damage`);
+//     }
+//   };
+//   return factFile;
+// }
 
-const characters = 
-[
-  createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
-  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
-  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
-  createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8),
-  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+// const characters = 
+// [
+//   createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
+//   createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
+//   createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
+//   createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8),
+//   createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+// ];
+// //const characters = createCharater('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
+
+
+// //console.log(characters);
+// //console.log(characters[0].evaluateFight(characters[1]));
+// //console.log(characters[0].describe());
+
+// characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 10, 7));
+// // console.log(characters);
+
+// // const findCharacter = characters.find(character => {
+// //   if (character.nickname === 'aragorn') {
+// //     return character;
+// //   }
+// // });
+
+// // console.log(findCharacter);
+
+// // const filterCharacter = characters.filter(character => {
+// //   if (character.race === 'Hobbit') {
+// //     return character;
+// //   }
+// // });
+
+// // console.log(filterCharacter);
+
+
+// // const filterCharacterAttack = characters.filter(character => {
+// //   if (character.attack > 5) {
+// //     return character;
+// //   }
+// // });
+
+// // console.log(filterCharacterAttack);
+
+// //createCharacter.factFile.describe();
+
+// function addWeapon(arr, nick, weapon) {
+//   return arr.filter(char => {
+//     if (char.nickname === nick) {
+//       return char.weapon = weapon;
+//     }
+//   });
+// }
+
+// addWeapon(characters, 'gandalf', 'a wizard staff');
+// addWeapon(characters, 'bilbo', 'the ring');
+// addWeapon(characters, 'frodo', 'a String and Barrow blade');
+// addWeapon(characters, 'aragorn', 'Anduril');
+// addWeapon(characters, 'legolas', 'a Bow and Arrow');
+// addWeapon(characters, 'arwen', 'Hadhafang');
+
+// // console.log(characters);
+
+// characters.forEach(char => {
+//   char.describe = function() {
+//     console.log(`${this.name} is a ${this.race} of the ${this.origin} who uses ${this.weapon}`);
+//   };
+// });
+
+// characters[0].describe();
+
+
+
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
 ];
-//const characters = createCharater('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
 
 
-//console.log(characters);
-//console.log(characters[0].evaluateFight(characters[1]));
-//console.log(characters[0].describe());
-
-characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 10, 7));
-// console.log(characters);
-
-// const findCharacter = characters.find(character => {
-//   if (character.nickname === 'aragorn') {
-//     return character;
-//   }
-// });
-
-// console.log(findCharacter);
-
-// const filterCharacter = characters.filter(character => {
-//   if (character.race === 'Hobbit') {
-//     return character;
-//   }
-// });
-
-// console.log(filterCharacter);
-
-
-// const filterCharacterAttack = characters.filter(character => {
-//   if (character.attack > 5) {
-//     return character;
-//   }
-// });
-
-// console.log(filterCharacterAttack);
-
-//createCharacter.factFile.describe();
-
-function addWeapon(arr, nick, weapon) {
-  return arr.filter(char => {
-    if (char.nickname === nick) {
-      return char.weapon = weapon;
-    }
-  });
+function findOne(arr, query) {
+  let hero = {};
+  for (let i = 0; i < arr.length; i++) {
+    for (const key in query) {
+      //console.log(query[key], arr[i][key]);
+      //console.log('number', query[key], arr[i]);
+      if (query[key] === arr[i][key]) {
+        hero = arr[i];
+        break;
+      }
+    //  } else if (query[key] === arr[i][key]){
+    //     //console.log(arr[i]);
+    //     hero = arr[i];
+    //  // }
+   
+    } 
+  }
+  console.log(hero);
+  return hero;
 }
 
-addWeapon(characters, 'gandalf', 'a wizard staff');
-addWeapon(characters, 'bilbo', 'the ring');
-addWeapon(characters, 'frodo', 'a String and Barrow blade');
-addWeapon(characters, 'aragorn', 'Anduril');
-addWeapon(characters, 'legolas', 'a Bow and Arrow');
-addWeapon(characters, 'arwen', 'Hadhafang');
-
-// console.log(characters);
-
-characters.forEach(char => {
-  char.describe = function() {
-    console.log(`${this.name} is a ${this.race} of the ${this.origin} who uses ${this.weapon}`);
-  };
-});
-
-characters[0].describe();
+//findOne(HEROES, {id: 3});
+findOne(HEROES, { squad: 'Justice League' });
+//console.log(findOne(HEROES, '{id: 1}'));
