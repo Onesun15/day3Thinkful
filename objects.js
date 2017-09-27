@@ -145,16 +145,28 @@ const luke = {
 
 const harry = {
   name: 'Harry Potter',
-  job_title: 'wizard'
+  job_title: 'wizard',
+  boss: luke.name
 };
 
 const sam = {
   name: 'Sam McSamface',
-  job_title: 'accountant'
+  job_title: 'accountant',
+  boss: luke.name
 };
 
 const array = [luke, harry, sam];
 
+// for (let i = 0; i < array.length; i++) {
+//   console.log(`${array[i].name}: ${array[i].job_title}`);
+// }
+
 for (let i = 0; i < array.length; i++) {
-  console.log(`${array[i].name}: ${array[i].job_title}`);
+  if (array[i].boss) {
+    console.log(`${array[i].job_title} ${array[i].name} reports to ${array[i].boss}.`);
+  } 
+  else {
+    console.log(`${array[i].job_title} ${array[i].name} doesn't report to anybody.`);
+  }
+   
 }
