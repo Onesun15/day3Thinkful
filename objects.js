@@ -118,14 +118,20 @@
 
 // //2
 
-const obj1 = {
-  foo: 'a',
-  bar: 'b',
-  fum: 'c',
-  quux: 'd',
-  spam: 'e'
+// const obj1 = {
+//   foo: 'a',
+//   bar: 'b',
+//   fum: 'c',
+//   quux: 'd',
+//   spam: 'e'
+// };
+
+// for (let key in obj1) {
+//   console.log(`${key} ${obj1[key]}`);
+// }
+
+const foodTime = { 
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
 };
 
-for (let key in obj1) {
-  console.log(`${key} ${obj1[key]}`);
-}
+console.log(foodTime.meals[3]);
