@@ -68,12 +68,30 @@ function enrollInSummerSchool(students) {
   return students;
 }
 
-
+//3
 
 function findById(items, idNum) {
   for (let i = 0; i < items.length; i++) {
     if (items[i].id === idNum) {
       return items[i];
+    }
+  }
+}
+
+//4
+
+function validateKeys(object, expectedKeys) {
+  if (Object.keys(object).length !== expectedKeys.length) {
+    return false;
+  }
+  
+  for (let i = 0; i < Object.keys(object).length; i++) {
+    if (Object.keys(object)[i] === expectedKeys[i]) {
+      return true;
+    }
+    
+    else {
+      return false;
     }
   }
 }
