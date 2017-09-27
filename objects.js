@@ -35,4 +35,15 @@ function personMaker() {
     };
     return person;
 }
+
+function keyDleter(obj) {
+    delete obj.foo;
+    delete obj.bar;
+    return obj;
+}
+
+
+function makeStudentsReport(data) {
+  return data.map(student => `${student.name}: ${student.grade}`);
+ }
   
