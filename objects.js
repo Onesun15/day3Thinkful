@@ -81,12 +81,14 @@ function findById(items, idNum) {
 //4
 
 function validateKeys(object, expectedKeys) {
-  if (Object.keys(object).length !== expectedKeys.length) {
+  const keys = Object.keys(object);
+
+  if (keys.length !== expectedKeys.length) {
     return false;
   }
   
-  for (let i = 0; i < Object.keys(object).length; i++) {
-    if (Object.keys(object)[i] === expectedKeys[i]) {
+  for (let i = 0; i < keys.length; i++) {
+    if (keys[i] === expectedKeys[i]) {
       return true;
     }
     
@@ -95,3 +97,4 @@ function validateKeys(object, expectedKeys) {
     }
   }
 }
+
