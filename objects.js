@@ -138,24 +138,24 @@
 
 //4
 
-const luke = {
-  name: 'Luke Skywalker',
-  job_title: 'jedi'
-};
+// const luke = {
+//   name: 'Luke Skywalker',
+//   job_title: 'jedi'
+// };
 
-const harry = {
-  name: 'Harry Potter',
-  job_title: 'wizard',
-  boss: luke.name
-};
+// const harry = {
+//   name: 'Harry Potter',
+//   job_title: 'wizard',
+//   boss: luke.name
+// };
 
-const sam = {
-  name: 'Sam McSamface',
-  job_title: 'accountant',
-  boss: luke.name
-};
+// const sam = {
+//   name: 'Sam McSamface',
+//   job_title: 'accountant',
+//   boss: luke.name
+// };
 
-const array = [luke, harry, sam];
+// const array = [luke, harry, sam];
 
 // for (let i = 0; i < array.length; i++) {
 //   console.log(`${array[i].name}: ${array[i].job_title}`);
@@ -199,3 +199,80 @@ const array = [luke, harry, sam];
 
 
 // decode('craft block argon meter bells brown croon droop');
+
+
+
+
+function createCharacter(name, nickname, race, origin, attack, defense) {
+  const factFile =  {
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
+    defense,
+    describe: function() {
+      console.log(`${this.name} is a ${this.race} from ${this.origin}.`);
+    },
+    evaluateFight: function(character) {
+      let x = this.attack-character.defense;
+      let y = character.attack-this.defense;
+
+      if (x < 0) {
+        x = 0;
+      }
+
+      if (y < 0) {
+        y = 0;
+      }
+      console.log(`Your opponent takes ${x} damage and you receive ${y} damage`);
+    }
+  };
+  return factFile;
+}
+
+const characters = 
+[
+  createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
+  createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+];
+//const characters = createCharater('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
+
+
+//console.log(characters);
+//console.log(characters[0].evaluateFight(characters[1]));
+//console.log(characters[0].describe());
+
+// characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 10, 7));
+// console.log(characters);
+
+// const findCharacter = characters.find(character => {
+//   if (character.nickname === 'aragorn') {
+//     return character;
+//   }
+// });
+
+// console.log(findCharacter);
+
+// const filterCharacter = characters.filter(character => {
+//   if (character.race === 'Hobbit') {
+//     return character;
+//   }
+// });
+
+// console.log(filterCharacter);
+
+
+// const filterCharacterAttack = characters.filter(character => {
+//   if (character.attack > 5) {
+//     return character;
+//   }
+// });
+
+// console.log(filterCharacterAttack);
+
+//createCharacter.factFile.describe();
+//const newDescribe = 
