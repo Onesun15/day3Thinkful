@@ -246,7 +246,7 @@ const characters =
 //console.log(characters[0].evaluateFight(characters[1]));
 //console.log(characters[0].describe());
 
-// characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 10, 7));
+characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendell', 10, 7));
 // console.log(characters);
 
 // const findCharacter = characters.find(character => {
@@ -275,4 +275,28 @@ const characters =
 // console.log(filterCharacterAttack);
 
 //createCharacter.factFile.describe();
-//const newDescribe = 
+
+function addWeapon(arr, nick, weapon) {
+  return arr.filter(char => {
+    if (char.nickname === nick) {
+      return char.weapon = weapon;
+    }
+  });
+}
+
+addWeapon(characters, 'gandalf', 'a wizard staff');
+addWeapon(characters, 'bilbo', 'the ring');
+addWeapon(characters, 'frodo', 'a String and Barrow blade');
+addWeapon(characters, 'aragorn', 'Anduril');
+addWeapon(characters, 'legolas', 'a Bow and Arrow');
+addWeapon(characters, 'arwen', 'Hadhafang');
+
+// console.log(characters);
+
+characters.forEach(char => {
+  char.describe = function() {
+    console.log(`${this.name} is a ${this.race} of the ${this.origin} who uses ${this.weapon}`);
+  };
+});
+
+characters[0].describe();
