@@ -161,12 +161,41 @@ const array = [luke, harry, sam];
 //   console.log(`${array[i].name}: ${array[i].job_title}`);
 // }
 
-for (let i = 0; i < array.length; i++) {
-  if (array[i].boss) {
-    console.log(`${array[i].job_title} ${array[i].name} reports to ${array[i].boss}.`);
-  } 
-  else {
-    console.log(`${array[i].job_title} ${array[i].name} doesn't report to anybody.`);
-  }
+// for (let i = 0; i < array.length; i++) {
+//   if (array[i].boss) {
+//     console.log(`${array[i].job_title} ${array[i].name} reports to ${array[i].boss}.`);
+//   } 
+//   else {
+//     console.log(`${array[i].job_title} ${array[i].name} doesn't report to anybody.`);
+//   }
    
-}
+// }
+
+// Cracking the Code
+
+// const cypher = {
+//   a: 2,
+//   b: 3,
+//   c: 4,
+//   d: 5
+// };
+
+// function decode(sentence) {
+//   const array = sentence.split(' ');
+//   let decoded = '';
+
+//   array.map(word => {
+//     if (cypher[word[0]]) {
+//       decoded = decoded + word[cypher[word[0]] - 1];
+//     }
+
+//     else {
+//       decoded = decoded + ' ';
+//     }
+//   });
+
+//   return decoded;
+// }
+
+
+// decode('craft block argon meter bells brown croon droop');
