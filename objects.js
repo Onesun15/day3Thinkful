@@ -57,10 +57,23 @@ function enrollInSummerSchool(students) {
     for (let key in students[i]) {
       students[i].status = 'In Summer school';
     }
-}
-
-return students;
+  }
+  return students;
 }
 
 //2 (Second Solution)
 
+function enrollInSummerSchool(students) {
+  students.forEach(student => console.log(student.status = 'In summer School'));
+  return students;
+}
+
+
+
+function findById(items, idNum) {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].id === idNum) {
+      return items[i];
+    }
+  }
+}
