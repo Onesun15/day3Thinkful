@@ -1,3 +1,4 @@
+'use strict';
 // //1
 
 // function createMyObject() {
@@ -103,7 +104,7 @@
 //   water: 210
 // };
 
-// console.log(loaf.flour, loaf.water);
+// // console.log(loaf.flour, loaf.water);
 
 // const loaf = {
 //   flour: 300,
@@ -113,4 +114,18 @@
 //   }
 // }
 
-// console.log(loaf.hydration());
+// // console.log(loaf.hydration());
+
+// //2
+
+const obj1 = {
+  foo: 'a',
+  bar: 'b',
+  fum: 'c',
+  quux: 'd',
+  spam: 'e'
+};
+
+for (let key in obj1) {
+  console.log(`${key} ${obj1[key]}`);
+}
