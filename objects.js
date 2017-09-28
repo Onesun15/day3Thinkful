@@ -303,38 +303,83 @@
 
 
 
-const HEROES = [
-  { id: 1, name: 'Captain America', squad: 'Avengers' },
-  { id: 2, name: 'Iron Man', squad: 'Avengers' },
-  { id: 3, name: 'Spiderman', squad: 'Avengers' },
-  { id: 4, name: 'Superman', squad: 'Justice League' },
-  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
-  { id: 6, name: 'Aquaman', squad: 'Justice League' },
-  { id: 7, name: 'Hulk', squad: 'Avengers' },
-];
+// const HEROES = [
+//   { id: 1, name: 'Captain America', squad: 'Avengers' },
+//   { id: 2, name: 'Iron Man', squad: 'Avengers' },
+//   { id: 3, name: 'Spiderman', squad: 'Avengers' },
+//   { id: 4, name: 'Superman', squad: 'Justice League' },
+//   { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+//   { id: 6, name: 'Aquaman', squad: 'Justice League' },
+//   { id: 7, name: 'Hulk', squad: 'Avengers' },
+// ];
+
+const Database = {
+  store: {
+    heroes: [
+      { id: 1, name: 'Captain America', squad: 'Avengers' },
+      { id: 2, name: 'Iron Man', squad: 'Avengers' },
+      { id: 3, name: 'Spiderman', squad: 'Avengers' },
+      { id: 4, name: 'Superman', squad: 'Justice League' },
+      { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+      { id: 6, name: 'Aquaman', squad: 'Justice League' },
+      { id: 7, name: 'Hulk', squad: 'Avengers' },
+    ]
+  },
+  findOne(query) {
+    let hero = null;
+    let minIndex = this.store.heroes.length;
+    for (let i = 0; i < this.store.heroes.length; i++) {
+      // Object.keys(query).forEach(key => {
+  
+      // })
+      for (const key in query) {
+        if (query[key] === this.store.heroes[i][key]) {
+          if (query.id === this.store.heroes[i].id) {
+            //console.log(this.store.heroes[i]);
+            hero = this.store.heroes[i];
+           // console.log(hero);
+          } else {
+            minIndex = minIndex > i ? i : minIndex;
+            hero = this.store.heroes[minIndex];
+          }
+        } else {
+          hero = null;
+         }
+      } 
+    }
+    return hero;
+  }
+};
+
+console.log(Database.findOne({ id: 3}));
+
 
 
 function findOne(arr, query) {
   let hero = {};
+  let minIndex = arr.length;
   for (let i = 0; i < arr.length; i++) {
+    // Object.keys(query).forEach(key => {
+
+    // })
     for (const key in query) {
-      //console.log(query[key], arr[i][key]);
-      //console.log('number', query[key], arr[i]);
       if (query[key] === arr[i][key]) {
-        hero = arr[i];
-        break;
+        if (query.id === arr[i].id) {
+          hero = arr[i];
+        } else {
+          minIndex = minIndex > i ? i : minIndex;
+          hero = arr[minIndex];
+        }
+      } else {
+        hero = null;
       }
-    //  } else if (query[key] === arr[i][key]){
-    //     //console.log(arr[i]);
-    //     hero = arr[i];
-    //  // }
-   
     } 
   }
-  console.log(hero);
   return hero;
 }
 
-//findOne(HEROES, {id: 3});
-findOne(HEROES, { squad: 'Justice League' });
-//console.log(findOne(HEROES, '{id: 1}'));
+//console.log(findOne(HEROES, {id: 3}));
+//console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
+//console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
+
+//console.log(Database.findOne({ id: 2 }));
